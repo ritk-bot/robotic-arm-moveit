@@ -236,35 +236,39 @@
     </collision>
     <xacro:dummy_inertia mass="0.1"/>
   </link>
-<!---->
-<!--  <ros2_control name="CustomArmSystem" type="system">-->
-<!--    <hardware>-->
-<!--      <plugin>gz_ros2_control/GazeboSimSystem</plugin>-->
-<!--    </hardware>-->
-<!--    <joint name="base_yaw_joint">-->
-<!--      <command_interface name="position"/><state_interface name="position"/><state_interface name="velocity"/>-->
-<!--    </joint>-->
-<!--    <joint name="shoulder_joint">-->
-<!--      <command_interface name="position"/><state_interface name="position"/><state_interface name="velocity"/>-->
-<!--    </joint>-->
-<!--    <joint name="elbow_joint">-->
-<!--      <command_interface name="position"/><state_interface name="position"/><state_interface name="velocity"/>-->
-<!--    </joint>-->
-<!--    <joint name="wrist_pitch_joint">-->
-<!--      <command_interface name="position"/><state_interface name="position"/><state_interface name="velocity"/>-->
-<!--    </joint>-->
-<!--    <joint name="wrist_roll_joint">-->
-<!--      <command_interface name="position"/><state_interface name="position"/><state_interface name="velocity"/>-->
-<!--    </joint>-->
-<!--    <joint name="gripper_servo_joint">-->
-<!--      <command_interface name="position"/><state_interface name="position"/><state_interface name="velocity"/>-->
-<!--    </joint>-->
-<!--  </ros2_control>-->
-<!--  <gazebo>-->
-<!--  <plugin-->
-<!--      filename="libgz_ros2_control-system.so"-->
-<!--      name="gz_ros2_control::GazeboSimROS2ControlPlugin">-->
-<!--    <parameters>/home/koro/ros2_ws/install/arm/share/arm/config/controllers.yaml</parameters>-->
-<!--  </plugin>-->
-<!--</gazebo>-->
+
+ <ros2_control name="CustomArmSystem" type="system">
+   <hardware>
+     <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+   </hardware>
+   <joint name="base_yaw_joint">
+     <command_interface name="effort"/><state_interface name="position"/><state_interface name="velocity"/>
+   </joint>
+   <joint name="shoulder_joint">
+     <command_interface name="effort"/><state_interface name="position"/><state_interface name="velocity"/>
+   </joint>
+   <joint name="elbow_joint">
+     <command_interface name="effort"/><state_interface name="position"/><state_interface name="velocity"/>
+   </joint>
+   <joint name="wrist_pitch_joint">
+     <command_interface name="effort"/><state_interface name="position"/><state_interface name="velocity"/>
+   </joint>
+   <joint name="wrist_roll_joint">
+     <command_interface name="effort"/><state_interface name="position"/><state_interface name="velocity"/>
+   </joint>
+   <joint name="gripper_servo_joint">
+     <command_interface name="effort"/><state_interface name="position"/><state_interface name="velocity"/>
+   </joint>
+ </ros2_control>
+  <gazebo>
+  <plugin
+    filename="libgz_ros2_control-system.so"
+    name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+
+    <parameters>
+      $(find arm)/config/controllers_pid.yaml
+    </parameters>
+
+  </plugin>
+</gazebo>
 </robot>

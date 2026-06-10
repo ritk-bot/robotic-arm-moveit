@@ -15,7 +15,7 @@ src/arm/urdf/arm.urdf
 src/my_robot_bringup/
 src/my_robot_description/
 src/ros_tutorials/
-
+src/minirover_description_ros2/
 *.pyc
 __pycache__/
 .vscode/
