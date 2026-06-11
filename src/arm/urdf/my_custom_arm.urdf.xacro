@@ -266,7 +266,7 @@
     name="gz_ros2_control::GazeboSimROS2ControlPlugin">
 
     <parameters>
-      $(find arm)/config/controllers_pid.yaml
+      $(find arm)/config/controllers.yaml
     </parameters>
 
   </plugin>

@@ -44,7 +44,7 @@ class KeyboardArm(Node):
 #     0.0     # gripper
 # ]
 
-        self.step = 0.1
+        self.step = 0.05
 
         self.print_help()
         self.limits = self.load_joint_limits()
@@ -63,7 +63,7 @@ Y / H : Gripper
 Z : Home Position
 X : Exit
 
-Current step size = 0.1 rad
+Current step size = 0.05 rad
 
 ============================================
 """)
@@ -75,7 +75,7 @@ Current step size = 0.1 rad
 
         point = JointTrajectoryPoint()
         point.positions = self.pos
-        point.time_from_start = Duration(sec=1)
+        point.time_from_start = Duration(sec=0,nanosec=200000000)
 
         msg.points.append(point)
 
