@@ -53,7 +53,7 @@ def generate_launch_description():
         Node(
             package="controller_manager",
             executable="spawner",
-            arguments=["effort_controller"],
+            arguments=["arm_controller"],
             output="screen"
         )
     ])

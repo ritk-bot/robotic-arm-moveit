@@ -242,22 +242,22 @@
      <plugin>gz_ros2_control/GazeboSimSystem</plugin>
    </hardware>
    <joint name="base_yaw_joint">
-     <command_interface name="effort"/><state_interface name="position"/><state_interface name="velocity"/>
+     <command_interface name="position"/><state_interface name="position"/><state_interface name="velocity"/>
    </joint>
    <joint name="shoulder_joint">
-     <command_interface name="effort"/><state_interface name="position"/><state_interface name="velocity"/>
+     <command_interface name="position"/><state_interface name="position"/><state_interface name="velocity"/>
    </joint>
    <joint name="elbow_joint">
-     <command_interface name="effort"/><state_interface name="position"/><state_interface name="velocity"/>
+     <command_interface name="position"/><state_interface name="position"/><state_interface name="velocity"/>
    </joint>
    <joint name="wrist_pitch_joint">
-     <command_interface name="effort"/><state_interface name="position"/><state_interface name="velocity"/>
+     <command_interface name="position"/><state_interface name="position"/><state_interface name="velocity"/>
    </joint>
    <joint name="wrist_roll_joint">
-     <command_interface name="effort"/><state_interface name="position"/><state_interface name="velocity"/>
+     <command_interface name="position"/><state_interface name="position"/><state_interface name="velocity"/>
    </joint>
    <joint name="gripper_servo_joint">
-     <command_interface name="effort"/><state_interface name="position"/><state_interface name="velocity"/>
+     <command_interface name="position"/><state_interface name="position"/><state_interface name="velocity"/>
    </joint>
  </ros2_control>
   <gazebo>
