@@ -25,6 +25,15 @@ def generate_launch_description():
         ),   
 
         Node(
+            package="ros_gz_bridge",
+            executable="parameter_bridge",
+            arguments=[
+                "/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock"
+            ],
+            output="screen",
+        ),
+        
+        Node(
             package="robot_state_publisher",
             executable="robot_state_publisher",
             arguments=[urdf_file],
@@ -54,6 +63,16 @@ def generate_launch_description():
             package="controller_manager",
             executable="spawner",
             arguments=["arm_controller"],
+            output="screen"
+        ),
+
+        Node(
+            package="robot_state_publisher",
+            executable="robot_state_publisher",
+            arguments=[urdf_file],
+            parameters=[
+                {"use_sim_time": True}
+            ],
             output="screen"
         )
     ])

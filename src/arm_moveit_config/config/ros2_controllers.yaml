@@ -6,11 +6,6 @@ controller_manager:
     arm_controller:
       type: joint_trajectory_controller/JointTrajectoryController
 
-
-    gripper_controller:
-      type: joint_trajectory_controller/JointTrajectoryController
-
-
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
 
@@ -22,15 +17,6 @@ arm_controller:
       - elbow_joint
       - wrist_pitch_joint
       - wrist_roll_joint
-    command_interfaces:
-      - position
-    state_interfaces:
-      - position
-      - velocity
-    allow_nonzero_velocity_at_trajectory_end: true
-gripper_controller:
-  ros__parameters:
-    joints:
       - gripper_servo_joint
     command_interfaces:
       - position
